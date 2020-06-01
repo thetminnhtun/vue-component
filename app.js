@@ -1,13 +1,12 @@
 Vue.component('post', {
 	template: `
-	<h1>Post Title</h1>
-	` ,
+	<div>
+		<h1><slot name="title">Post Title</slot></h1>
+		<p><slot name="content">Post Content</slot></p>
+	</div>
+	`
 })
-
 
 new Vue({
 	el: '#app'
-	// data
-	// methods
-	// created
 })
