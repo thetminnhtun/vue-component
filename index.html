@@ -7,13 +7,9 @@
 <body>
 
 	<div id="app">
-		<post>
-			<template #title>
-				This is post title
-			</template>
-			<template #content>
-				This is post content
-			</template>
+		<post v-for="(post, index) in posts" :key="index"
+		:name="post.title" 
+		:content="post.content">
 		</post>
 	</div>
 
