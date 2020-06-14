@@ -1,4 +1,4 @@
-Vue.component('create-post', {
+const createPost = {
 	template: `
 		<div>
 			<input v-model="title" placeholder="Enter post title"><br><br>
@@ -22,10 +22,9 @@ Vue.component('create-post', {
 			this.content = ''
 		}
 	}
-})
+}
 
-
-Vue.component('post', {
+const post = {
 	template: `
 	<div>
 		<h1>{{ name }}</h1>
@@ -39,10 +38,14 @@ Vue.component('post', {
 		},
 		content: String
 	}
-})
+}
 
 new Vue({
 	el: '#app',
+	components: {
+		'create-post': createPost,
+		'post': post
+	},
 	data: {
 		posts: [
 			{title: 'Post One', content: 'Post one content'},
@@ -55,5 +58,12 @@ new Vue({
 				this.posts.push(post)
 			}
 		}
+	}
+})
+
+new Vue({
+	el: '#app2',
+	components: {
+		'create-post': createPost
 	}
 })
